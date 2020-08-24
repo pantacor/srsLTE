@@ -4,6 +4,11 @@ Description=Software Radio System's light-weight EPC implementation
 [Service]
 Type=simple
 Restart=always
+ExecStartPre=-/sbin/modprobe -v sctp tun
+ExecStartPre=-/sbin/modprobe -v tun
+ExecStartPre=-mkdir -p /dev/net
+ExecStartPre=-mknod /dev/net/tun c 10 200
+ExecStartPre=-chmod 600 /dev/net/tun
 ExecStart=/usr/bin/srsepc /pvconfigs/srslte/epc.conf
 RestartSec=2
 
