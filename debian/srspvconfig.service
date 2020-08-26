@@ -1,0 +1,12 @@
+[Unit]
+Description=Software Radio System's Pantavisor Config Hook
+
+[Service]
+Type=oneshot
+ExecStart=-cp -f /pvconfigs/srslte/*.conf /etc/srslte/
+RemainAfterExit=true
+
+[Install]
+WantedBy=srsenb.service
+WantedBy=srsepc.service
+WantedBy=srsue.service

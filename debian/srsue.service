@@ -1,5 +1,6 @@
 [Unit]
 Description=Software Radio Systems's LTE UE implementation
+After=srspvconfig.service
 
 [Service]
 Type=simple
