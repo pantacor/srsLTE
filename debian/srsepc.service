@@ -1,5 +1,6 @@
 [Unit]
 Description=Software Radio System's light-weight EPC implementation
+After=srspvconfig.service
 
 [Service]
 Type=simple

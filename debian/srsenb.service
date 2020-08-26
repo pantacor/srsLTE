@@ -1,5 +1,6 @@
 [Unit]
 Description=Software Radio System's LTE eNB implementation
+After=srspvconfig.service
 
 [Service]
 Type=simple
